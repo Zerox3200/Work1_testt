@@ -1,0 +1,46 @@
+@mixin tramsitions() {
+    transition: {
+        duration: 0.5s;
+        timing-function: linear;
+        property: all;
+    }
+}
+
+@mixin Breakpoints($point) {
+    @if $point ==mobile {
+        @media (max-width:767px) {
+            @content;
+        }
+    }
+
+    @else if $point ==small {
+        @media (min-width:768px) and (max-width:991px) {
+            @content;
+        }
+    }
+
+    @else if $point ==medium {
+        @media (min-width:992px) and (max-width:1200px) {
+            @content;
+        }
+    }
+
+    @else if $point ==large {
+        @media (min-width:1201px) {
+            @content;
+        }
+    }
+}
+
+@mixin center() {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin Title() {
+    font: {
+        size: 30px;
+        weight: bold;
+    }
+}

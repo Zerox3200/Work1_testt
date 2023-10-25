@@ -1,0 +1,36 @@
+@use './../helpers' as *;
+
+.FormAppere {
+    width: 100%;
+    height: 500px;
+
+    .formColor:focus {
+        box-shadow: 0 0 0 0.2rem rgb(204 136 5 / 31%) !important;
+        border-color: rgb(204 136 5 / 31%) !important;
+    }
+
+    label {
+        @include Breakpoints(mobile) {
+            font-size: 12px;
+            font-weight: bold;
+        }
+    }
+
+    .submiting {
+        width: 80%;
+        margin: auto;
+        transform: translateY(0);
+
+        transition: {
+            duration: 0.5s;
+            timing-function: linear;
+            property: all
+        }
+    }
+
+    .submiting:hover {
+        box-shadow: 1px 0px 12px 0.2rem rgb(204 136 5 / 38%) !important;
+        width: 90%;
+        transform: translateY(-5px);
+    }
+}

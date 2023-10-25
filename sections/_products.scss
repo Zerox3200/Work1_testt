@@ -1,0 +1,219 @@
+@use './helpers' as *;
+
+.Products {
+    height: fit-content;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 5% 95%;
+
+    @include Breakpoints(small) {
+        height: fit-content;
+    }
+
+    @include Breakpoints(mobile) {
+        height: fit-content;
+        margin-bottom: 68px;
+    }
+
+    .Products-title {
+        @include center();
+        column-gap: 12px;
+
+        p {
+            @include Title();
+            margin-bottom: 29px;
+        }
+
+        i {
+            font-size: 33px;
+            margin-bottom: 29px;
+        }
+    }
+
+    .Products-cards {
+        position: relative;
+        display: flex;
+        padding: 0px 5px;
+        justify-content: space-between;
+
+        @include Breakpoints(mobile) {
+            flex-direction: column;
+            row-gap: 100px;
+        }
+
+        @include Breakpoints(small) {
+            flex-direction: column;
+            row-gap: 98px
+        }
+
+        .Filtering {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-start;
+            justify-content: flex-start;
+            column-gap: 6px;
+            row-gap: 6px;
+            width: 80%;
+
+            @include Breakpoints(mobile) {
+                row-gap: 10px;
+                width: 100%;
+                justify-content: center;
+                margin-bottom: 92px;
+            }
+
+            @include Breakpoints(small) {
+                width: 100%;
+                justify-content: center;
+                margin-bottom: 92px;
+            }
+
+
+            .Sylinder {
+                transition-delay: 100ms;
+            }
+
+            .Sylinder_description {
+                position: absolute;
+                top: 0%;
+                left: 0%;
+                width: 100%;
+                height: 100%;
+                background-color: #000000c7;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 20px;
+                opacity: 0;
+
+                transition: {
+                    duration: 0.2s;
+                    timing-function: linear;
+                    property: all;
+                }
+
+                dt,
+                dd {
+                    font-size: 15px;
+
+                    @include Breakpoints(mobile) {
+                        font-size: 20px;
+                        width: 34%;
+                    }
+                }
+
+                &:hover {
+                    opacity: 1;
+                }
+            }
+
+            .Redees,
+            .Sylinder,
+            .Shoulders,
+            .predicable,
+            .Oil_Refil,
+            .Jewllerly,
+            .Jar {
+                width: calc(98%/4);
+                height: 300px;
+                position: relative;
+                background-position: center;
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+
+                @include Breakpoints(mobile) {
+                    width: 241px;
+                    margin: auto;
+                }
+
+                @include Breakpoints(small) {
+                    width: 362px;
+                }
+
+                @include Breakpoints(medium) {
+                    width: 32%;
+                    height: 275px;
+                }
+            }
+        }
+
+        .filterBtns {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            width: 20%;
+            row-gap: 13px;
+            padding: 0px 8px;
+
+            @include Breakpoints(small) {
+                width: 100%;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+                height: 5%;
+                column-gap: 10px;
+            }
+
+            @include Breakpoints(mobile) {
+                width: 100%;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+                height: 5%;
+                column-gap: 10px;
+            }
+
+            .btn {
+                background-color: #d08905;
+                color: white;
+                width: 100%;
+
+                @include Breakpoints(mobile) {
+                    width: 118px;
+                    height: 52px;
+                    font-size: 14px;
+                }
+
+                @include Breakpoints(small) {
+                    width: 19%;
+                    height: 52px;
+                }
+
+                &:hover {
+                    background-color: black;
+                    color: white;
+                }
+            }
+        }
+    }
+}
+
+
+.filterElements {
+    color: #ffffff;
+    text-align: center;
+    display: none;
+}
+
+.show {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition: {
+        duration: 0.3s;
+        timing-function: linear;
+    }
+
+}
+
+.activivation {
+    background-color: black !important;
+    box-shadow: none !important;
+}

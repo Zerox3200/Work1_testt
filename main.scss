@@ -1,0 +1,44 @@
+@use './sections/head';
+@use './sections/About';
+@use './sections/About2';
+@use './sections/products';
+@use './sections/quotation';
+@use './sections/ContactUs2';
+@use './sections/Foot';
+
+@use './sections/helpers' as *;
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+.hidden {
+    opacity: 0;
+
+    transition: {
+        property: all;
+        duration: 1s
+    }
+
+}
+
+@media (prefers-reduced-motion) {
+    .hidden {
+        transition: none;
+    }
+}
+
+.showing {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+#preloader {
+    border: solid black 1px;
+    width: 20%;
+    height: 30px;
+    margin: auto;
+    margin-top: 300px;
+}

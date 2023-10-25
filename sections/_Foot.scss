@@ -1,0 +1,167 @@
+@use './helpers' as *;
+
+.foot {
+    width: 100%;
+    height: 300px;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 75% 1fr;
+    background-color: #cc8804;
+    color: white;
+    margin-top: 10px;
+
+    @include Breakpoints(mobile) {
+        height: 400px;
+        grid-template-rows: 84% 1fr;
+    }
+
+    @include Breakpoints(small) {
+        height: 400px;
+        grid-template-rows: 84% 1fr;
+    }
+
+    .foot_pt1.container {
+        display: flex;
+
+        @include Breakpoints(mobile) {
+            flex-wrap: wrap !important;
+        }
+
+        @include Breakpoints(small) {
+            flex-wrap: wrap !important;
+        }
+
+        .foot_sec1 {
+            width: 40%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+
+            @include Breakpoints(mobile) {
+                width: 100%;
+            }
+
+            @include Breakpoints(small) {
+                width: 100%;
+            }
+
+            .icons_foot {
+                width: 70%;
+                height: 50px;
+                display: flex;
+                align-items: center;
+
+                a {
+                    color: white;
+                    font-size: large;
+                    border: solid;
+                    border-radius: 50%;
+                    padding: 3%;
+                    opacity: 0.7;
+                    cursor: pointer;
+                    transition: 0.3s linear all;
+                    margin-left: 10px;
+
+                    &:hover {
+                        opacity: 1;
+                    }
+                }
+            }
+
+            p:first-of-type {
+                font-size: xx-large;
+                font-weight: bold;
+            }
+
+            p:first-of-type+p {
+                line-height: 1.4;
+            }
+        }
+
+        .foot_sec2,
+        .foot_sec4 {
+            width: calc(60%/3);
+            padding-top: 8px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+
+            @include Breakpoints(mobile) {
+                width: 100%;
+            }
+
+            @include Breakpoints(small) {
+                width: 100%;
+            }
+
+            p:first-of-type {
+                font-size: large;
+                font-weight: bold;
+            }
+        }
+
+        .foot_sec2 {
+            ul {
+                list-style: none;
+                padding: 0;
+                line-height: 2;
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                align-items: flex-start;
+
+                li {
+                    font-size: 15px;
+                    font-weight: bold;
+                    opacity: 0.7;
+                    transition: 0.3s linear all;
+
+                    &:hover {
+                        opacity: 1;
+                    }
+
+                    a {
+                        text-decoration: none;
+                        color: white;
+                    }
+                }
+            }
+        }
+
+        .foot_sec4 {
+            ul {
+                list-style: none;
+                padding: 0;
+                font-size: smaller;
+
+                span {
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+
+    .foot_pt2.container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        p {
+            text-align: center;
+
+            @include Breakpoints(mobile) {
+                margin: 0;
+                font-size: 13px;
+            }
+
+            @include Breakpoints(small) {
+                margin: 0;
+                font-size: 13px;
+            }
+        }
+
+        span {
+            font-weight: bold;
+        }
+    }
+}

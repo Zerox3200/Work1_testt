@@ -1,0 +1,257 @@
+@use './helpers' as *;
+
+.mobile-nav {
+    display: none;
+}
+
+.mobile-nav-toggle.d-lg-none {
+    display: none;
+}
+
+select {
+    color: white !important;
+
+    @include Breakpoints(mobile) {
+        color: black !important;
+        margin: 0 !important;
+        position: absolute;
+        right: 6%;
+        top: 30%;
+    }
+
+    @include Breakpoints(small) {
+        color: black !important;
+        margin: 0 !important;
+        position: absolute;
+        right: 7%;
+        top: 30%;
+    }
+}
+
+
+#header {
+    height: 85px;
+    transition: all 0.5s;
+    padding: 12px 0;
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    z-index: 997;
+    box-shadow: 0px 0px 10px #00000057;
+
+    @include Breakpoints(mobile) {
+        background-color: white;
+        display: flex;
+    }
+
+    .navbar-nav a {
+        color: white;
+        font-weight: bold;
+        font-size: 18px;
+    }
+
+    .SideBar {
+        width: 37px;
+        height: 40px;
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        row-gap: 8px;
+
+        @include Breakpoints(small) {
+            display: flex;
+        }
+
+        @include Breakpoints(mobile) {
+            display: flex;
+        }
+
+        span {
+            width: 100%;
+            border: solid black 1px;
+
+            @include Breakpoints(large) {
+                display: none
+            }
+
+            @include Breakpoints(medium) {
+                display: none
+            }
+        }
+    }
+
+    nav {
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        height: 93%;
+    }
+
+    .logo h1 {
+        font-size: 36px;
+        margin: 0;
+        padding: 0;
+        line-height: 1;
+        font-weight: 400;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+    }
+
+    ul {
+        a {
+            @include Breakpoints(small) {
+                display: none;
+            }
+
+            @include Breakpoints(mobile) {
+                display: none;
+            }
+
+            position: relative;
+            @include tramsitions();
+
+            &::after {
+                content: "";
+                display: block;
+                @include tramsitions();
+                border: solid transparent 0.3px;
+                position: absolute;
+                bottom: 16%;
+                left: 13%;
+                width: 0%;
+            }
+
+            &:hover {
+                color: #d08905;
+                text-decoration: none;
+
+                &::after {
+                    width: 72%;
+                    border: solid #d08905 0.3px;
+                }
+            }
+        }
+    }
+
+    .logo img {
+        padding: 0;
+        margin: 0px 0;
+        width: 99px;
+
+        @include Breakpoints(mobile) {
+            width: 99px;
+        }
+    }
+
+    .container {
+        @include Breakpoints(mobile) {
+            width: 81%;
+        }
+
+        @include Breakpoints(small) {
+            width: 76%;
+        }
+    }
+}
+
+#header.header-scrolled,
+#header.header-pages {
+    height: 80px;
+    padding: 15px 0;
+    background-color: #fff;
+    box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.3);
+
+
+    a {
+        color: black;
+        font-weight: bold;
+        font-size: 18px;
+    }
+
+    select {
+        color: black !important;
+    }
+}
+
+#header.header-scrolled #topbar,
+#header.header-pages #topbar {
+    display: none;
+}
+
+.Main_SideBar {
+    border: solid #0000005c 1px;
+    position: absolute;
+    top: 100%;
+    right: -37%;
+    width: 50%;
+    height: 1500px;
+    background-color: white;
+    box-shadow: -20px 5px 40px 0px rgba(0, 0, 0, 0.3607843137);
+
+    a {
+        color: black;
+        font-weight: bold;
+        font-size: 21px;
+    }
+
+    .Expection {
+        display: block !important;
+        position: relative;
+
+        &::after {
+            content: "";
+            display: block;
+            @include tramsitions();
+            border: solid transparent 0.3px;
+            position: absolute;
+            width: 0% !important;
+            bottom: 1% !important;
+            left: 1% !important;
+        }
+
+        &:hover {
+            color: #1bb1dc;
+            text-decoration: none;
+
+            &::after {
+                width: 43% !important;
+                border: solid #1bb1dc 0.3px;
+            }
+        }
+    }
+}
+
+.PosShow {
+    right: 0%;
+
+    transition: {
+        duration: 0.3s;
+        timing-function: linear;
+    }
+
+    @include Breakpoints(medium) {
+        display: none;
+    }
+
+    @include Breakpoints(large) {
+        display: none;
+    }
+}
+
+.Poshide {
+    right: -107%;
+
+    transition: {
+        duration: 0.3s;
+        timing-function: linear;
+    }
+
+    @include Breakpoints(medium) {
+        display: none;
+    }
+
+    @include Breakpoints(large) {
+        display: none;
+    }
+}
